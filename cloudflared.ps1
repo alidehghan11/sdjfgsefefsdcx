@@ -1,5 +1,5 @@
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
-file="D:\a\reverse-rdp-windows-github-actions\reverse-rdp-windows-github-actions\cloudflared\cloudflared.exe"
+$file= "D:\a\reverse-rdp-windows-github-actions\reverse-rdp-windows-github-actions\cloudflared\cloudflared.exe"
 $pinfo.FileName = $fEnv:file
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
