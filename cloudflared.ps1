@@ -1,5 +1,5 @@
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
-$pinfo.FileName = "$pwd\cloudflared\cloudflared-windows-amd64.exe"
+$pinfo.FileName = ".\cloudflared\cloudflared-windows-amd64.exe"
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
 $pinfo.UseShellExecute = $false
