@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Download
-    - run: Invoke-WebRequest https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-windows-amd64.zip -OutFile cloudflared.zip
+      run: Invoke-WebRequest https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-windows-amd64.zip -OutFile cloudflared.zip
     - run: Expand-Archive cloudflared.zip
     
     - name: Enable TS
