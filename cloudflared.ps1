@@ -6,7 +6,7 @@ $Telegramchatid = ${{ secrets.TG_CHAT_ID }}
 $Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$($Message)"}
 
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
-$pinfo.FileName = "$pwd\cloudflared-windows-amd64.exe"
+$pinfo.FileName = "$pwd\cloudflared\cloudflared-windows-amd64.exe"
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
 $pinfo.UseShellExecute = $false
