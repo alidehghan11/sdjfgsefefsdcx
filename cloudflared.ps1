@@ -1,6 +1,5 @@
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
-$file= "D:\a\Windows-RDP-ACTIONS\Windows-RDP-ACTIONS\cloudflared\cloudflared.exe"
-$pinfo.FileName = $fEnv:file
+$pinfo.FileName = "D:\a\Windows-RDP-ACTIONS\Windows-RDP-ACTIONS\cloudflared\cloudflared.exe"
 $pinfo.RedirectStandardError = $true
 $pinfo.RedirectStandardOutput = $true
 $pinfo.UseShellExecute = $false
