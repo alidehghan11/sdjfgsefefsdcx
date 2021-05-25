@@ -3,7 +3,8 @@ Param([Parameter(Mandatory=$true)][String]$Message)
 $Telegramtoken = $`{{secrets.TG_TOKEN}}`
 $Telegramchatid = ${secrets.TG_CHAT_ID}
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$($Message)"}
+$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$($Message)"
+}
 
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
 $pinfo.FileName = "$pwd\cloudflared\cloudflared-windows-amd64.exe"
