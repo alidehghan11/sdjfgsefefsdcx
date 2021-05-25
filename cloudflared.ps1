@@ -1,7 +1,7 @@
 Function Send-Telegram {
 Param([Parameter(Mandatory=$true)][String]$Message)
 $Telegramtoken = $`{{secrets.TG_TOKEN}}`
-$Telegramchatid = $`{{secrets.TG_CHAT_ID}}`
+$Telegramchatid = ${{secrets.TG_CHAT_ID}}
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$($Message)"}
 
