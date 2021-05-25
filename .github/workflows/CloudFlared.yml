@@ -11,6 +11,7 @@ jobs:
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-windows-amd64.zip -OutFile cloudflared.zip
     - run: Expand-Archive cloudflared.zip
+    - run: mv .\cloudflared\cloudflared.exe cloudflared.exe
     
     - name: Enable TS
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
