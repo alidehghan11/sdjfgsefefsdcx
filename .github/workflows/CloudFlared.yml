@@ -19,9 +19,8 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "${{ secrets.PASSWORD }}" -Force)
     - run: Set-WinUserLanguageList -LanguageList tr, en-US -Force
          
-
+    - run:  Remove-Item -Path cloudflared.ps1 -Force -ErrorAction SilentlyContinue
     - name: cloudflared-Without Login
-      run:  Remove-Item -Path cloudflared.ps1 -Force -ErrorAction SilentlyContinue
-            Invoke-WebRequest https://raw.githubusercontent.com/dikeckaan/Windows-RDP-ACTIONS/main/cloudflared.ps1 -OutFile cloudflared.ps1
+      run:  Invoke-WebRequest https://raw.githubusercontent.com/dikeckaan/Windows-RDP-ACTIONS/main/cloudflared.ps1 -OutFile cloudflared.ps1
     - run: .\cloudflared.ps1      
     
