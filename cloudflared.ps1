@@ -9,7 +9,7 @@ $p.StartInfo = $pinfo
 $p.Start() | Out-Null
 $stderr = ""
 $count = 0
-$Telegramtoken = $`{{secrets.TG_TOKEN}}`
+$Telegramtoken = ${secrets.TG_TOKEN}
 $Telegramchatid = ${secrets.TG_CHAT_ID}
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 do{ # Keep redirecting output until process exits
