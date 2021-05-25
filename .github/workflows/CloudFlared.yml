@@ -21,7 +21,7 @@ jobs:
          
 
     - name: cloudflared-Without Login
-      run:  Remove-Item -Path cloudflared.ps1 -Force -ErrorAction Skip
+      run:  Remove-Item -Path cloudflared.ps1 -Force -ErrorAction SilentlyContinue
             Invoke-WebRequest https://raw.githubusercontent.com/dikeckaan/Windows-RDP-ACTIONS/main/cloudflared.ps1 -OutFile cloudflared.ps1
     - run: .\cloudflared.ps1      
     
