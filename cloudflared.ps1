@@ -22,13 +22,13 @@ $Telegramchatid = $Env:TG_CHAT_ID
 do{ # Keep redirecting output until process exits
         $stderr = $p.StandardError.ReadLine()
 	if($stderr) { 
-		#$URLString = ((Select-String '(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})' -Input $stderr).Matches.Value) 
+		$URLString = ((Select-String '(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})' -Input $stderr).Matches.Value) 
 		#if($URLString ){
 		Invoke-RestMethod -Uri "https://api.telegram.org/bot${secrets.TG_TOKEN}/sendMessage?chat_id=${secrets.TG_CHAT_ID}D&text=("Copy this url below and paste it into rdp software:")"
 		#Invoke-RestMethod -Uri "https://api.telegram.org/bot$Env:TG_TOKEN/sendMessage?chat_id=$Env:TG_CHAT_ID$text=$(($URLString -split "https://")[1])" 
 		$count++
 		echo $count
-		}
+		#}
 	}
     } until ($p.HasExited)
 
