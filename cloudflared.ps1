@@ -1,9 +1,5 @@
-Function Send-Telegram {
-Param([Parameter(Mandatory=$true)][String]$Message)
 $Telegramtoken = $Env:TG_TOKEN
 $Telegramchatid = $Env:TG_CHAT_ID
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$($Message)"}
 
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
 $pinfo.FileName = D:\a\Windows-RDP-ACTIONS\Windows-RDP-ACTIONS\cloudflared\cloudflared.exe
