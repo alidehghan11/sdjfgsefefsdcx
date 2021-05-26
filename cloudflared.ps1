@@ -1,6 +1,3 @@
-$Telegramtoken = $Env:TG_TOKEN
-$Telegramchatid = $Env:TG_CHAT_ID
-
 $pinfo = New-Object System.Diagnostics.ProcessStartInfo
 $pinfo.FileName = D:\a\Windows-RDP-ACTIONS\Windows-RDP-ACTIONS\cloudflared\cloudflared.exe
 $pinfo.RedirectStandardError = $true
@@ -20,10 +17,8 @@ do{ # Keep redirecting output until process exits
 	if($stderr) { 
 		$URLString = ((Select-String '(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})' -Input $stderr).Matches.Value) 
 		if($URLString -and ($count -lt 1)){
-		#Send-Telegram -Message "Copy this url below and paste it into rdp software:"
-		#Send-Telegram -Message $(($URLString -split "https://")[1])
-		$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$("Copy this url below and paste it into rdp software:")"
-		$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Telegramtoken)/sendMessage?chat_id=$($Telegramchatid)&text=$(($URLString -split "https://")[1])" 
+		$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$Env:TG_TOKEN/sendMessage?chat_id=$Env:TG_CHAT_ID&text=$("Copy this url below and paste it into rdp software:")"
+		$Response = Invoke-RestMethod -Uri "https://api.telegram.org/bot$Env:TG_TOKEN/sendMessage?chat_id=$($Telegramchatid)&text=$(($URLString -split "https://")[1])" 
 		$count++
 		}
 	}
