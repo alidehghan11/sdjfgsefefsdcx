@@ -29,7 +29,7 @@ do{ # Keep redirecting output until process exits
 		$count++
 		echo $count
 		#}
-	}
+	#}
     } until ($p.HasExited)
 
 #-and ($count -lt 1)
