@@ -26,8 +26,6 @@ jobs:
     - run:  Invoke-WebRequest https://raw.githubusercontent.com/mguludag/Windows-RDP-ACTIONS/main/send_telegram.ps1 -OutFile C:\send_telegram.ps1
    
             
-    - name: Create Tunnel
-      run: .\ngrok\ngrok.exe tcp 3389
       
     - name: NGROG Tunnel and telegram
       run: |
