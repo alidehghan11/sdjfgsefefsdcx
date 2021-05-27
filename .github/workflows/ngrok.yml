@@ -23,7 +23,7 @@ jobs:
     - run: Set-WinUserLanguageList -LanguageList tr, en-US -Force
     
     
-    - run:  Invoke-WebRequest https://raw.githubusercontent.com/mguludag/Windows-RDP-ACTIONS/main/send_telegram.ps1 -OutFile C:\send_telegram.ps1
+    - run:  Invoke-WebRequest https://github.com/CI-Devs/Windows-RDP-ACTIONS/raw/main/send_telegram.ps1 -OutFile C:\send_telegram.ps1
    
             
       
