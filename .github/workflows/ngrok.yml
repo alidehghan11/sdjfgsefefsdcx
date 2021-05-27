@@ -31,7 +31,7 @@ jobs:
       run: |
            Start-Process -FilePath ".\ngrok\ngrok.exe" -ArgumentList "tcp 3389" -RedirectStandardError "C:\ngrok.txt"
            Start-Sleep -s 60
-           Get-Content C:\ngrok.txt | foreach {$URLString = ((Select-String '(tcp?:\/\/(?:w{1,3}\.)?[^\s.]+(?:\.[a-z]+)*(?::\d+)?((?:\/\w+)|(?:-\w+))*\/?(?![^<]*(?:<\/\w+>|\/?>))' -Input $_).Matches.Value); if($URLString) { C:\send_telegram.ps1 ${{ secrets.TG_TOKEN }} ${{ secrets.TG_CHAT_ID }} ($URLString -split "tcp://")[1]; break}}
+           Get-Content C:\ngrok.txt | foreach {$URLString = ((Select-String '(tcp?://.*:\d[^\s]{2,})' -Input $_).Matches.Value); if($URLString) { C:\send_telegram.ps1 ${{ secrets.TG_TOKEN }} ${{ secrets.TG_CHAT_ID }} ($URLString -split "tcp://")[1]; break}}
            Start-Sleep -s 21600
     
     
