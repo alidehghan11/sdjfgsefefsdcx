@@ -17,10 +17,18 @@ You need set secrets on settings → (NGROK or CF)
 
 * `CF_DOMAIN`  For Cloudflare Custom Domain mode
 * `NGROK_AUTH_TOKEN`  Needed only for NGROK mode
-* `NGROK_REGION`  Needed only for NGROK mode
+* `NGROK_REGION`  Needed only for NGROK mode (options: `us`,`eu`,`ap`,`au`,`sa`,`jp`,`in`)
 * `PASSWORD`  RDP password
 * `TG_CHAT_ID`  Telegram user id for get login url
 * `TG_TOKEN`  Telegram bot token for get message from bot
+
+us - United States (Ohio)
+eu - Europe (Frankfurt)
+ap - Asia/Pacific (Singapore)
+au - Australia (Sydney)
+sa - South America (Sao Paulo)
+jp - Japan (Tokyo)
+in
 
 
 ## Usage
@@ -30,7 +38,7 @@ These steps should be useful for debugging broken builds directly on the build w
 ### Option 1 (Easy way 🚘) 
 
 1) Get the tunnel auth token at: https://dashboard.ngrok.com/auth .
-2) Under the repository's settings, make a secrets called `NGROK_AUTH_TOKEN`, `TG_TOKEN`, `TG_CHAT_ID` and `PASSWORD`
+2) Under the repository's settings, make a secrets called `NGROK_AUTH_TOKEN`, `NGROK_REGION`,`TG_TOKEN`, `TG_CHAT_ID` and `PASSWORD`
 3) Trigger a NGROK in actions page.
 4) Wait until the last step which will hang forever as it connects to ngrok and sets up the reverse tunnel.
 5) Wait from telegram bot to get url
