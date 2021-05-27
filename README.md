@@ -22,15 +22,6 @@ You need set secrets on settings → (NGROK or CF)
 * `TG_CHAT_ID`  Telegram user id for get login url
 * `TG_TOKEN`  Telegram bot token for get message from bot
 
-us - United States (Ohio)
-eu - Europe (Frankfurt)
-ap - Asia/Pacific (Singapore)
-au - Australia (Sydney)
-sa - South America (Sao Paulo)
-jp - Japan (Tokyo)
-in
-
-
 ## Usage
 
 These steps should be useful for debugging broken builds directly on the build worker. Use this project as reference and toss the steps into your project after some failing part of the build for introspection.
