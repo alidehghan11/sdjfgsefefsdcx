@@ -84,3 +84,6 @@ These projects also allow remote introspection of very temporary environments li
   * https://tunshell.com
 * macOS VNC
   * https://github.com/dakotaKat/fastmac-VNCgui
+
+---
+This repo based on [Nelson Chen's reverse-rdp-windows-github-actions repo](https://github.com/nelsonjchen/reverse-rdp-windows-github-actions) and much more developed by [Kaan Dikeç](github.com/dikeckaan) and [Muhammed Galip Uludağ](https://github.com/mguludag/)
