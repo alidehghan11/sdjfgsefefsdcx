@@ -17,7 +17,7 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "${{ secrets.PASSWORD }}" -Force)
     - run: Set-WinUserLanguageList -LanguageList tr, en-US -Force
          
-    - run:  Invoke-WebRequest https://raw.githubusercontent.com/mguludag/Windows-RDP-ACTIONS/main/send_telegram.ps1 -OutFile C:\send_telegram.ps1
+    - run:  Invoke-WebRequest https://github.com/CI-Devs/Windows-RDP-ACTIONS/raw/main/send_telegram.ps1 -OutFile C:\send_telegram.ps1
     - name: cloudflared Login
       run: Start-Process -FilePath ".\cloudflared.exe" -ArgumentList "login" -RedirectStandardError "C:\cloudflared.txt"
     - run: Start-Sleep -s 10 
