@@ -29,9 +29,12 @@ jobs:
       
     - name: NGROK Tunnel and telegram
       run: |
-           Start-Process -FilePath ".\ngrok\ngrok.exe" -ArgumentList "tcp 3389 -region ${{ secrets.NGROK_REGION }}" -RedirectStandardOutput "C:\ngrok.txt"
+           Start-Process -FilePath ".\ngrok\ngrok.exe" -ArgumentList "tcp 3389 -region ${{ secrets.NGROK_REGION }}"
            Start-Sleep -s 30
-           Get-Content C:\ngrok.txt | foreach {$URLString = ((Select-String '(tcp?://.*:\d[^\s]{2,})' -Input $_).Matches.Value); if($URLString) { C:\send_telegram.ps1 ${{ secrets.TG_TOKEN }} ${{ secrets.TG_CHAT_ID }} ($URLString -split "tcp://")[1]; break}}
+           $Response = ConvertFrom-Json(Invoke-WebRequest -Uri "http://127.0.0.1:4040/api/tunnels")
+           Start-Sleep -s 1
+           $URLString = $Response.tunnels.public_url
+           if($URLString) { C:\send_telegram.ps1 ${{ secrets.TG_TOKEN }} ${{ secrets.TG_CHAT_ID }} ($URLString -split "tcp://")[1]}
            Start-Sleep -s 21600
     
     
