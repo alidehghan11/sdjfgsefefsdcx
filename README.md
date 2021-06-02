@@ -26,7 +26,20 @@ You need set secrets on settings → (NGROK or CF)
 
 These steps should be useful for debugging broken builds directly on the build worker. Use this project as reference and toss the steps into your project after some failing part of the build for introspection.
 
-### Option 1 (Easy way 🚘) 
+### Option 1 (Easiest way 🚑- No sound) 
+
+1) Go https://remotedesktop.google.com/headless and login if needed.
+2) Copy Powershell command that page.
+3) Go actions tab in your forked repo.
+4) Select `Chrome Remote Desktop`
+5) Trigger action with your desired 6 digit pin and paste command in step 1.
+6) Go again step 1 link in remote Support tab.
+7) When setup finished , you can see the pc and double-click , write your pin.
+8) Enjoy! ☕
+9) When you're done introspecting, cancel the job.
+
+
+### Option 2 (Easy way 🚘) 
 
 1) Get the tunnel auth token at: https://dashboard.ngrok.com/auth .
 2) Under the repository's settings, make a secrets called `NGROK_AUTH_TOKEN`, `NGROK_REGION`,`TG_TOKEN`, `TG_CHAT_ID` and `PASSWORD`
@@ -40,7 +53,7 @@ These steps should be useful for debugging broken builds directly on the build w
 
 
 ---
-### Option 2 (Harder but better performance ✈)
+### Option 3 (Harder but better performance ✈)
 
 1) Download [cloudflared.exe](https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe)
 2) Under the repository's settings, make a secrets called `TG_TOKEN`, `TG_CHAT_ID` and `PASSWORD`
@@ -54,7 +67,7 @@ These steps should be useful for debugging broken builds directly on the build w
 8) **TADAAAAA!!!** low delay more performance ✈
 
 ---
-### Option 3 (Hardcore but best performance 🚀)
+### Option 4 (Hardcore but best performance 🚀)
 
 1) Download [cloudflared.exe](https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe)
 2) Under the repository's settings, make a secrets called `CF_DOMAIN` ,`TG_TOKEN`, `TG_CHAT_ID` and `PASSWORD`
