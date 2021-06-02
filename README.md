@@ -34,7 +34,7 @@ These steps should be useful for debugging broken builds directly on the build w
 4) Select `Chrome Remote Desktop`
 5) Trigger action with your desired 6 digit pin and paste command in step 1.
 6) Go again step 1 link in remote Support tab.
-7) When setup finished , you can see the pc and double-click , write your pin.
+7) When setup finished , you can see your machine in list , write your pin and connect.
 8) Enjoy! ☕
 9) When you're done introspecting, cancel the job.
 
