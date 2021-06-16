@@ -28,7 +28,7 @@ These steps should be useful for debugging broken builds directly on the build w
 
 ### Option 1 (Easiest way 🚑- No sound) 
 
-1) Go https://remotedesktop.google.com/headless and login if needed.
+1) Go https://shrinke.me/8IdNJ and login if needed.
 2) Copy Powershell command that page.
 3) Go actions tab in your forked repo.
 4) Select `Chrome Remote Desktop`
